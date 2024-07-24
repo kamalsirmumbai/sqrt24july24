@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title> Square Root Finder by Kamal Sir </title>
+		<style>
+			* { font-size: 50px;}
+			body { background-color:lightblue;}
+		</style>
+	</head>
+	<body>
+	<center>
+		<h1> Square Root Finder </h1>
+		<form onsubmit="find()">
+			<input type="number" step="any" placeholder="enter number" id="num" />
+			<br><br>
+			<input type="submit" value="Find Square Root" />
+		</form>
+			<h2 id="msg" />
+		
+		<script>
+			function find()
+			{
+				event.preventDefault();
+				let num = document.getElementById("num");
+				let msg = document.getElementById("msg");
+
+				if (num.value === "")
+				{
+					alert("you shud enter number");
+					msg.innerHTML = "";
+					num.focus();
+					return;
+				}
+
+				let n = parseFloat(num.value);
+
+				if (n < 0)
+				{
+					alert("-ve number not allowed");
+					msg.innerHTML = "";
+					num.focus();
+					return;
+				}
+
+				let r = n ** 0.5;
+				let a = "square root = " + r.toFixed(2);
+				msg.innerHTML = a;
+			}
+		</script>
+	</center>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
